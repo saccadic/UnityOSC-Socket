@@ -10,6 +10,7 @@ Windows & Mac ともに利用可能です。Unity3D Free版でも動作します
 ##参考
 + keijiro Unity-osc:<https://github.com/keijiro/unity-osc>
 + jorgegarcia UnityOSC:<https://github.com/jorgegarcia/UnityOSC>
++ ofxOSC:<https://github.com/openframeworks/openFrameworks/tree/master/addons/ofxOsc>
 
 ##使い方
 ###サンプル：OscController.cs 
@@ -22,17 +23,17 @@ Windows & Mac ともに利用可能です。Unity3D Free版でも動作します
 
             private OscSocket osc;
 
-            public string host;
-            public    int RemotePort;
-            public    int ListenPort;
+            public string host;　　　　//相手のIPアドレス
+            public    int RemotePort;　//相手のポート番号
+            public    int ListenPort;　//自分のポート番号
 
             // Use this for initialization
         	void Start () {
                 osc = new OscSocket();
 
-                osc.Setup(host, RemotePort, ListenPort);
+                osc.Setup(host, RemotePort, ListenPort); //初期設定
 
-                osc.OnMassage += (soket,msg) => {
+                osc.OnMassage += (soket,msg) => { //受信イベント
                     Debug.Log(soket.Address);
                     Debug.Log((int)msg.data[0]);
                     Debug.Log((long)msg.data[1]);
@@ -46,22 +47,22 @@ Windows & Mac ともに利用可能です。Unity3D Free版でも動作します
         	void Update ()
             {
         	    if(Input.GetKeyDown(KeyCode.Space)){
-                    var message = new OscMessage();
-                    message.setAdress("/from/unity/");
-                    message.addIntArg(1);
-                    message.addInt64Arg(1);
-                    message.addFloatArg(9.9f);
-                    message.addStringArg("hogehoge");
+                    var message = new OscMessage();　//送信メッセージ
+                    message.setAdress("/from/unity/");　//OSCアドレス
+                    message.addIntArg(1);　//Int32型
+                    message.addInt64Arg(1);//Long型
+                    message.addFloatArg(9.9f);//Float型
+                    message.addStringArg("hogehoge");//String型
 
                     byte[] data = System.Text.Encoding.ASCII.GetBytes("test");
-                    message.addBlobArg(data);
+                    message.addBlobArg(data);//Byte[]型
 
-                    osc.send(message);
+                    osc.send(message);//送信
                 }
         	}
 
             void OnApplicationQuit()
             {
-                osc.close();
+                osc.close();//終了処理
             }
         }
