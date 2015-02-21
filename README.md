@@ -1,5 +1,5 @@
 #UnityOSC-Socket
-UnityOSC-SocketはOSCプロトコルによる双方向通信をシンプルに提供するライブラリです
+UnityOSC-SocketはOSCプロトコルによる双方向通信をシンプルに提供するライブラリです。    
 Windows & Mac ともに利用可能です。Unity3D Free版でも動作します。
 
 ##ToDo
