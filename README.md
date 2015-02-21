@@ -31,9 +31,9 @@ Windows & Mac ともに利用可能です。Unity3D Free版でも動作します
         	void Start () {
                 osc = new OscSocket();
 
-                osc.Setup(host, RemotePort, ListenPort); //初期設定
+                osc.Setup(host, RemotePort, ListenPort);//初期設定
 
-                osc.OnMassage += (soket,msg) => { //受信イベント
+                osc.OnMassage += (soket,msg) => {       //受信イベント
                     Debug.Log(soket.Address);
                     Debug.Log((int)msg.data[0]);
                     Debug.Log((long)msg.data[1]);
@@ -47,22 +47,22 @@ Windows & Mac ともに利用可能です。Unity3D Free版でも動作します
         	void Update ()
             {
         	    if(Input.GetKeyDown(KeyCode.Space)){
-                    var message = new OscMessage();　//送信メッセージ
+                    var message = new OscMessage();     //送信メッセージ
                     message.setAdress("/from/unity/");　//OSCアドレス
-                    message.addIntArg(1);　//Int32型
-                    message.addInt64Arg(1);//Long型
-                    message.addFloatArg(9.9f);//Float型
-                    message.addStringArg("hogehoge");//String型
+                    message.addIntArg(1);　             //Int32型
+                    message.addInt64Arg(1);             //Long型
+                    message.addFloatArg(9.9f);          //Float型
+                    message.addStringArg("hogehoge");   //String型
 
                     byte[] data = System.Text.Encoding.ASCII.GetBytes("test");
-                    message.addBlobArg(data);//Byte[]型
+                    message.addBlobArg(data);           //Byte[]型
 
-                    osc.send(message);//送信
+                    osc.send(message);                  //送信
                 }
         	}
 
             void OnApplicationQuit()
             {
-                osc.close();//終了処理
+                osc.close();    //終了処理
             }
         }
