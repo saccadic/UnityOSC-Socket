@@ -1,9 +1,15 @@
 #UnityOSC-Socket
 UnityOSC-SocketはOSCプロトコルによる双方向通信をシンプルに提供するライブラリです
+Windows & Mac ともに利用可能です。Unity3D Free版でも動作します。
 
 ##ToDo
 + Unityからサイズの大きいBlobデータを送信すると正しくパケットが作成されない。
 + エラー処理の追加
++ UDP以外のプロトコルでも利用してみる
+
+##参考
++ keijiro Unity-osc:<https://github.com/keijiro/unity-osc>
++ jorgegarcia UnityOSC:<https://github.com/jorgegarcia/UnityOSC>
 
 ##使い方
 ###サンプル：OscController.cs 
