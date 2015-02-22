@@ -61,10 +61,22 @@ namespace UnityOSC
             //Adress part
             data = Encoding.ASCII.GetBytes(this.adress);
             this.Adress.AddRange(data);
-            this.Adress.AddRange(pads);
+			int Adress_Padding = this.Adress.Count % 4;
+			if (Adress_Padding == 0) 
+			{
+				this.Adress.AddRange (pad);
+			} 
+			else 
+			{
+				Adress_Padding  = 4 - Adress_Padding ;
+				for (var i = 0; i < Adress_Padding ; i++)
+				{
+					this.Adress.AddRange(pad);
+				}
+			}
 
             //TypeList
-            int TypeList_Padding = TypeList.Count % 4;
+            int TypeList_Padding = this.TypeList.Count % 4;
             if (TypeList_Padding == 0)
             {
                 this.TypeList.AddRange(pad);
