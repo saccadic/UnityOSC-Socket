@@ -26,7 +26,6 @@ namespace UnityOSC
 
         private byte[] pad = { 0 };
         byte[] dot = { 44 }; //","
-        byte[] pads = { 0, 0, 0, 0 };
 
         public OscMessage()
         {
