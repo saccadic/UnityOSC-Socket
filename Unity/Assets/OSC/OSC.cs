@@ -12,7 +12,7 @@ namespace UnityOSC
     using System.Collections;
     using System.Collections.Generic;
 
-    class OscMessage
+    public class OscMessage
     {
         private string adress;
 
@@ -319,7 +319,7 @@ namespace UnityOSC
         }
     }
 
-    struct Message
+    public struct Message
     {
         public string path;
         public string adress;
@@ -330,7 +330,7 @@ namespace UnityOSC
         public List<object> data;
     }
 
-    class OscSocket
+    public class OscSocket
     {
         //UDP Socket
         private UdpClient udpClient;
