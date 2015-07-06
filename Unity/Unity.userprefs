@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../unity/CarSim_v2.0/Assets/UoF/Scripts/UoF.cs">
+    <Files>
+      <File FileName="../../../unity/CarSim_v2.0/Assets/Car_system_v2_5/Face_OSC/reciver.cs" Line="38" Column="1" />
+      <File FileName="../../../unity/CarSim_v2.0/Assets/Car_system_v2_5/Face_OSC/move_eye.cs" Line="16" Column="46" />
+      <File FileName="../../../unity/CarSim_v2.0/Assets/Car_system_v2_5/Face_OSC/move_face.cs" Line="7" Column="22" />
+      <File FileName="../../../unity/CarSim_v2.0/Assets/UoF/OSC/OSC.cs" Line="384" Column="15" />
+      <File FileName="../../../unity/CarSim_v2.0/Assets/UoF/Scripts/UoF.cs" Line="92" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

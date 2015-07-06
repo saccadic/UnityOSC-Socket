@@ -18,7 +18,7 @@ server.on('message', function (message, remote) {
     
     
 
-fs.writeFile('data_o2.txt', buf);
+fs.writeFile('data_u2.txt', buf);
 
 });
 
