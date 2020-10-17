@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Katusyohi Hotta  
  */
 
-namespace UnityOSC
+namespace UnityOSC_Socket
 {
     using System;
     using System.Net;
