@@ -11,6 +11,7 @@ namespace UnityOSC
     using System.Threading;
     using System.Collections;
     using System.Collections.Generic;
+    using System.Diagnostics;
 
     public class OscMessage
     {
@@ -63,11 +64,14 @@ namespace UnityOSC
 			int Adress_Padding = this.Adress.Count % 4;
 			if (Adress_Padding == 0) 
 			{
-				this.Adress.AddRange (pad);
-			} 
+                for (var i = 0; i < 4; i++)
+                {
+                    this.Adress.AddRange(pad);
+                }
+            } 
 			else 
 			{
-				Adress_Padding  = 4 - Adress_Padding ;
+                Adress_Padding  = 4 - Adress_Padding ;
 				for (var i = 0; i < Adress_Padding ; i++)
 				{
 					this.Adress.AddRange(pad);
@@ -78,7 +82,10 @@ namespace UnityOSC
             int TypeList_Padding = this.TypeList.Count % 4;
             if (TypeList_Padding == 0)
             {
-                this.TypeList.AddRange(pad);
+                for (var i = 0; i < 4; i++)
+                {
+                    this.Adress.AddRange(pad);
+                }
             }
             else
             {
@@ -380,7 +387,9 @@ namespace UnityOSC
             byte[] buffer;
             buffer = msg.Encoder();
 
-            UnityEngine.Debug.Log(buffer.Length);
+            UnityEngine.Debug.Log(msg.debugNum);
+
+            //UnityEngine.Debug.Log(buffer.Length);
 
             udpClient.Send(buffer, buffer.Length, endPoint);
         }
