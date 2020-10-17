@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityOSC;
+using UnityOSC_Socket;
 using System.Threading;
 
 public class OscController : MonoBehaviour {

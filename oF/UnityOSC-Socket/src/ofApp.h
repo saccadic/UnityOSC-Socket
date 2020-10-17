@@ -18,7 +18,7 @@
 inline void str2char(char* dst, const std::string& src) {
 	int size = src.length();
 	strncpy(dst, src.c_str(), size);
-	*(dst + size - 1) = '\0';
+	*(dst + size) = '\0';
 }
 
 class ofApp : public ofBaseApp{
