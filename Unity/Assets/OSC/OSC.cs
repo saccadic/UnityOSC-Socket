@@ -387,8 +387,6 @@ namespace UnityOSC
             byte[] buffer;
             buffer = msg.Encoder();
 
-            UnityEngine.Debug.Log(msg.debugNum);
-
             //UnityEngine.Debug.Log(buffer.Length);
 
             udpClient.Send(buffer, buffer.Length, endPoint);
